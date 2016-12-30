@@ -7,7 +7,7 @@
         <ul class="sidebar-menu">
             <li class="header">MAIN NAVIGATION</li>
             <li class="treeview">
-                <a href="{{ url('/admin/categories') }}">
+                <a href="/admin/categories">
                     <i class="fa fa-files-o"></i>
                     <span>Category</span>
                     <span class="pull-right-container">
@@ -16,7 +16,7 @@
                 </a>
             </li>
             <li>
-                <a href="projects">
+                <a href="/admin/projects">
                 <i class="fa fa-th"></i>
                 <span>Projects</span>
                 <span class="pull-right-container">

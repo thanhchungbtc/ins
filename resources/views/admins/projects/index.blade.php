@@ -2,8 +2,8 @@
 @section('content-header')
 
 <h1>
-	Categories
-	<small>Project Categories</small>
+	Projects
+	<small>Projects Management</small>
 </h1>
 
 @stop
@@ -13,33 +13,39 @@
 	<div class="col-md-12">
 		<div class="box">
 			<div class="box-header with-border">
-				<h3 class="box-title">Categories List</h3>
-				<a class="btn btn-primary pull-right" href="{{ link_to_route('categories.create') }}">New</a>
+				<h3 class="box-title">Projects List</h3>
+				<a class="btn btn-primary pull-right" href="{{ link_to_route($breadcrums[0].'.create') }}">New</a>
 			</div>
 			<div class="box-body">
 				<table class="table table-bordered" id="dataTable">
 					<thead>
 						<th>Id</th>
 						<th>Name</th>
+						<th>Category</th>
+						<th>Investor</th>
+						<th>Price</th>
 						<th>Created At</th>
 						<th>Updated At</th>
 						<th>Actions</th>
 					</thead>
 					<tbody>
-						@foreach($categories as $category)
-						<tr id="row{{ $category->id }}">
-							<td>{{ $category->id }}</td>
+						@foreach($projects as $project)
+						<tr id="row{{ $project->id }}">
+							<td>{{ $project->id }}</td>
 							<td>
-								<a href="{{ link_to_route('categories.edit', ['category' => $category->id]) }}">{{ $category->name }}
+								<a href="{{ link_to_route($breadcrums[0].'.edit', ['project' => $project->id]) }}">{{ $project->name }}
 								</a>
 							</td>
-							<td>{{ $category->created_at }}</td>
-							<td>{{ $category->updated_at }}</td>
+							<td>{{ $project->category->name }}</td>
+							<td>{{ $project->investor }}</td>
+							<td>${{ number_format($project->price) }}</td>
+							<td>{{ $project->created_at }}</td>
+							<td>{{ $project->updated_at }}</td>
 							<td>
-								<form class="deleteForm" method="POST" action="{{ route('categories.destroy', ['category' => $category->id]) }}">
+								<form class="deleteForm" method="POST" action="{{ route($breadcrums[0].'.destroy', ['project' => $project->id]) }}">
 									{{ csrf_field() }}
 									<input type="hidden" name="_method" value="DELETE">
-									<a class="btn btn-primary" href="{{ link_to_route('categories.edit', ['category' => $category->id]) }}">Edit</a>
+									<a class="btn btn-primary" href="{{ link_to_route($breadcrums[0].'.edit', ['project' => $project->id]) }}">Edit</a>
 									<button class="btn btn-danger" type="submit" id="deleteButton">Delete</button>
 								</form>
 							</td>
@@ -71,22 +77,7 @@
 		function(isConfirm){
 			if (isConfirm) {
 				var method = $('input[name=_method]').val() || self.attr('method');
-				// fetch(self.attr('action'), {
-				// 	method: method,
-				// 	headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-				// 	body: self.serialize()
-				// }).then(function(response) {
-				// 	$('#row' + response.id).remove();
-				// 	swal({
-				// 		title: "Done!",
-				// 		text: "Delete successfully",
-				// 		timer: 700,
-				// 		type: 'success',
-				// 		showConfirmButton: false
-				// 	});
-				// }).catch(function(err) {
 
-				// });
 				$.ajax({
 					type: method,
 					url: self.attr('action'),

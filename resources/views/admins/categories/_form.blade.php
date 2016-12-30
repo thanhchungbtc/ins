@@ -1,9 +1,11 @@
 {{ csrf_field() }}
 <div class="box-body">
-	<div class="form-group">
+	<div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}" >
 		<label for="name">Name</label>
 		<input class="form-control" type="text" name="name" value="{{ old('name', isset($category) ? $category->name : '') }}" autofocus="">
-	</div>
+		@if ($errors->has('name')) <p class="help-block">{{ $errors->first('name') }}</p> @endif
+    </div>
+</div>
 </div>
 <div class="box-footer">
 	<a class="btn btn-default" href="{{ Request::query('returnUrl') }}">Cancel</a>

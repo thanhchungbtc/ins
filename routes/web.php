@@ -20,4 +20,5 @@ Route::get('/', "HomeController@index");
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 	Route::get('/', 'HomeController@index');
 	Route::resource('categories', 'CategoriesController');
+	Route::resource('projects', 'ProjectsController');
 });
