@@ -6,12 +6,6 @@
 		Category
 		<small>Project category</small>
 	</h1>
-	<ol class="breadcrumb">
-		<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-		<li class="">Catgory</li>
-		<li class="active">New</li>
-	</ol>
-
 @stop
 
 @section('content')

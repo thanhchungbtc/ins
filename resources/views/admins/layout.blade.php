@@ -21,6 +21,7 @@
 			<!-- Content Header (Page header) -->
 			<section class="content-header">
 				@yield('content-header')
+				@include('admins.shared.breadcrum')
 			</section>
 
 			<!-- Main content -->
