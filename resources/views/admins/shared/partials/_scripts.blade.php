@@ -35,3 +35,6 @@
 <script src="/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/dist/js/demo.js"></script>
+
+<script src="/js/libs.js"></script>
+{{-- <script src="/js/app.js"></script> --}}

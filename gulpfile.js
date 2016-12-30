@@ -16,6 +16,12 @@ require('laravel-elixir-vue-2');
 elixir((mix) => {
     mix.sass('app.scss')
        .webpack('app.js')
+       .scripts([
+       		'libs/sweetalert-dev.js'
+       	], './public/js/libs.js')
+       	.styles([
+       		'libs/sweetalert.css'
+       	], './public/css/libs.css')
        .browserSync({
        		'proxy': 'ins.dev'
        });

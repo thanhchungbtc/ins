@@ -70,11 +70,16 @@ class CategoriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        $c = $category->delete();
+
+        return response([
+            'message' => $c,
+            'id' => $category->id
+        ], 200);
     }
 }

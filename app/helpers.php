@@ -16,3 +16,12 @@ function link_to_route($routeName, $routeParams = null)
 	}
 	return route($routeName, $params);
 }
+
+function flash($title = null, $message = null)
+{
+	$flash = app('App\Http\Flash');
+	if (func_num_args() == 0) {
+		return $flash;
+	}
+	return $flash->message($title, $message);
+}

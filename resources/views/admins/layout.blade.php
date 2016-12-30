@@ -4,9 +4,10 @@
 
 	<title>Admin panel</title>
 
-	<link rel="stylesheet" type="text/css" href="/css/app.css">
 
 	@include('admins/shared/partials/_head')
+	<link rel="stylesheet" type="text/css" href="/css/app.css">
+	<link rel="stylesheet" type="text/css" href="/css/libs.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 
@@ -33,5 +34,9 @@
 	<!-- ./wrapper -->
 
 	@include('admins.shared.partials._scripts')
+
+	@include('admins.shared.flash')
+
+	@yield('scripts.footer')
 </body>
 </html>
