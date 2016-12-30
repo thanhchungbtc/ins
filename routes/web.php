@@ -10,7 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', "HomeController@index");
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+/**
+ * Admin specific routes
+ */
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
+	Route::get('/', 'HomeController@index');
+	Route::resource('categories', 'CategoriesController');
 });
