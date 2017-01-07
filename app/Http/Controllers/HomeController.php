@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Project;
 
 class HomeController extends Controller
 {
     public function index()
     {
-    	return view('sites/home');
+        $projects = Project::with('category')->take(8)->get();
+    	return view('sites/home/index', compact('projects'));
     }
 
 }

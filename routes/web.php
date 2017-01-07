@@ -10,9 +10,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// home page
 Route::get('/', "HomeController@index");
+Route::get('/index', 'HomeController@index');
 
+// projects
+Route::get('/projects', 'ProjectsController@index');
+Route::get('/projects/{project}', 'ProjectsController@show');
 
+// pages
+Route::get('/about', 'PagesController@about');
+Route::get('/contact', 'PagesController@contact');
 
 /**
  * Admin specific routes

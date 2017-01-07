@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 	<title>Admin panel</title>
-
-
 	@include('admins/shared/partials/_head')
 	<link rel="stylesheet" type="text/css" href="/css/app.css">
 	<link rel="stylesheet" type="text/css" href="/css/libs.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/dropzone.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-
 	<div class="wrapper">
-
 		@include('admins.shared.partials._top_navigation')
 		<!-- Left side column. contains the logo and sidebar -->
 		@include('admins.shared.partials._sidebar')

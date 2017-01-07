@@ -17,9 +17,9 @@ class CreateTablesProjects extends Migration
             $table->increments('id');
             $table->integer('category_id')->unsigned();
             $table->string('name');
-            $table->text('description');
-            $table->string('investor');
-            $table->integer('price');
+            $table->text('description')->nullable();
+            $table->string('investor')->nullable();
+            $table->integer('price')->nullable()->default(0);
             $table->timestamps();
         });
     }

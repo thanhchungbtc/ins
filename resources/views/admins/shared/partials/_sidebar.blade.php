@@ -11,7 +11,6 @@
                     <i class="fa fa-files-o"></i>
                     <span>Category</span>
                     <span class="pull-right-container">
-                    <span class="label label-primary pull-right">4</span>
                     </span>
                 </a>
             </li>
@@ -19,9 +18,6 @@
                 <a href="/admin/projects">
                 <i class="fa fa-th"></i>
                 <span>Projects</span>
-                <span class="pull-right-container">
-                    <span class="label label-primary pull-right">4</span>
-                </span>
                 </a>
             </li>
             <li class="treeview">

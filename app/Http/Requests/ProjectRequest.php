@@ -25,7 +25,8 @@ class ProjectRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'category_id' => 'required|not_in:0'
+            'category_id' => 'required|not_in:0',
+            'photo' => 'required'
         ];
     }
 

@@ -7688,4 +7688,8 @@ button.close {
   }
 }
 
+.template {
+  display: none;
+}
+
 /*# sourceMappingURL=app.css.map */

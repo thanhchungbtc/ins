@@ -76,7 +76,6 @@ class CategoriesController extends Controller
     public function destroy(Category $category)
     {
         $c = $category->delete();
-
         return response([
             'message' => $c,
             'id' => $category->id
