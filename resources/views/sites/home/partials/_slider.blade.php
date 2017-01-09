@@ -4,7 +4,7 @@
         <ul>
             <li data-transition="fade" data-slotamount="10" data-masterspeed="200" data-thumb="">
                 <!--  BACKGROUND IMAGE -->
-                <img src="images-slider/wide1.jpg" alt=""/>
+                <img src="/images/images-slider/wide1.jpg" alt=""/>
                 <div class="tp-caption big-white sft"
                      data-x="0"
                      data-y="160"
@@ -40,7 +40,7 @@
 
             <li data-transition="fade" data-slotamount="10" data-masterspeed="200" data-thumb="">
                 <!--  BACKGROUND IMAGE -->
-                <img src="images-slider/wide2.jpg" alt=""/>
+                <img src="/images/images-slider/wide2.jpg" alt=""/>
                 <div class="tp-caption big-white sft"
                      data-x="0"
                      data-y="160"
@@ -76,7 +76,7 @@
 
             <li data-transition="fade" data-slotamount="10" data-masterspeed="200" data-thumb="">
                 <!--  BACKGROUND IMAGE -->
-                <img src="images-slider/wide3.jpg" alt=""/>
+                <img src="/images/images-slider/wide3.jpg" alt=""/>
                 <div class="tp-caption big-white sft"
                      data-x="0"
                      data-y="160"

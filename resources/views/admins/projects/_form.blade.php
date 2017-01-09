@@ -32,7 +32,7 @@
 
             <div class="form-group {{ $errors->has('price') ? 'has-error' : '' }}">
                 <label for="price">Price</label>
-                <input class="form-control" type="text" name="price"
+                <input class="form-control" type="number" name="price"
                        value="{{ old('price', isset($project) ? $project->price : '') }}">
                 @if ($errors->has('price')) <p class="help-block">{{ $errors->first('price') }}</p> @endif
             </div>
@@ -45,21 +45,38 @@
                         class="help-block">{{ $errors->first('description') }}</p> @endif
             </div>
         </div>
+
         <div class="col-md-6">
-            <label for="photo">Photo</label>
-            <div class="row" id="photoList">
-                @if(isset($project))
-                    @foreach($project->photos as $photo)
-                        <div class="col-md-3"><img src="/{{ $photo->path }}" alt="" class="img-responsive"></div>
-                    @endforeach
-                @endif
+
+            <div class="form-group {{ $errors->has('complete') ? 'has-error' : '' }}" >
+                <label for="complete">Complete Date</label>
+                <div class="input-group date">
+                    <div class="input-group-addon">
+                        <i class="fa fa-calendar"></i>
+                    </div>
+                    <input class="form-control pull-right" type="text" name="complete" id="datepicker" value="{{ old('complete', isset($project) ? $project->complete : '') }}">
+                    @if ($errors->has('complete')) <p class="help-block">{{ $errors->first('complete') }}</p> @endif
+                </div>
             </div>
 
-            <div class="upload-photo">
-                <input type="file" name="photo[]" multiple class="active">
+
+            <div class="form-group">
+                <label for="photo">Photo</label>
+                <div class="row" id="photoList">
+                    @if(isset($project))
+                        @foreach($project->photos as $photo)
+                            <div class="col-md-3"><img src="/{{ $photo->path }}" alt="" class="img-responsive"></div>
+                        @endforeach
+                    @endif
+                </div>
+
+                <div class="upload-photo">
+                    <input type="file" name="photo[]" multiple class="active" accept=".jpg, .jpeg, .png">
+                </div>
+
+                <div class="col-md-3 template"><img src="" alt="" class="img-responsive"></div>
             </div>
 
-            <div class="col-md-3 template"><img src="" alt="" class="img-responsive"></div>
         </div>
     </div>
 
@@ -72,10 +89,13 @@
 @include('admins.shared.errors')
 @section('scripts.footer')
     <script>
+        $('#datepicker').datepicker({
+            autoclose: true,
+        });
+
         $('.upload-photo').on('change', 'input[type=file].active', function(e) {
 
             let self = $(this);
-//            self.after(self.clone());
 
             for (let i = 0; i < this.files.length; i++) {
                 let file = this.files[i];

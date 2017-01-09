@@ -8,10 +8,21 @@ class Photo extends Model
 {
     protected $table = 'project_photos';
 
-    protected $fillable = ['path'];
+    protected $fillable = ['path', 'thumbnailPath'];
 
-    public function Project()
+    public function project()
     {
         return $this->belongsTo(Project::class);
+    }
+
+    public function delete()
+    {
+        if (parent::delete()) {
+            \File::delete($this->path);
+            \File::delete($this->thumbnailPath);
+
+            return true;
+        }
+        return false;
     }
 }

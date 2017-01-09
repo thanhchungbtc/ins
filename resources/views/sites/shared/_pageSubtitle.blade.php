@@ -5,7 +5,7 @@
             <div class="col-md-12">
                 <h1>{{ $pageTitle }}</h1>
                 <ul class="crumb">
-                    <li><a rel="v:url" property="v:title" href="http://demo.oceanthemes.net/archi">Home</a></li>
+                    <li><a href="/">Trang chủ</a></li>
                     <b>/</b>
                     <li class="active">{{ $pageTitle }}</li>
                 </ul>

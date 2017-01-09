@@ -19,6 +19,7 @@ class CreateTablesProjects extends Migration
             $table->string('name');
             $table->text('description')->nullable();
             $table->string('investor')->nullable();
+            $table->timestamp('complete')->nullable();
             $table->integer('price')->nullable()->default(0);
             $table->timestamps();
         });

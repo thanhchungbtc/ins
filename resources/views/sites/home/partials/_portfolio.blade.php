@@ -22,7 +22,7 @@
                          </span>
                          </span>
                     </a>
-                    <img src="images/portfolio/pf%20(1).jpg" alt=""/>
+                    <img src="{{ $p->photos->first()->thumbnailPath }}" alt=""/>
                 </div>
             </div>
             <!-- close gallery item -->

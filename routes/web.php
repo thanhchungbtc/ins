@@ -23,6 +23,10 @@ Route::get('/projects/{project}', 'ProjectsController@show');
 Route::get('/about', 'PagesController@about');
 Route::get('/contact', 'PagesController@contact');
 
+// shops
+Route::get('/shop', 'ProductsController@index');
+Route::get('/shop/{product}', 'ProductsController@show');
+
 /**
  * Admin specific routes
  */
@@ -30,4 +34,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 	Route::get('/', 'HomeController@index');
 	Route::resource('categories', 'CategoriesController');
 	Route::resource('projects', 'ProjectsController');
+	Route::resource('products', 'ProductsController');
+	Route::resource('product-categories', 'ProductCategoriesController');
+
 });

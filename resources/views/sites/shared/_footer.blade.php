@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img src="/images/logo.png" class="logo-small" alt=""><br>
+                <img src="/images/ui/logo.png" class="logo-small" alt=""><br>
                 Công ty TNHH Kiến trúc và kỹ thuật INS
             </div>
 

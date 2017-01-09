@@ -20,14 +20,14 @@
                                     <div class="col-md-3 item {{ $p->category_id }} ">
                                         <div class="picframe">
                                             <a class="simple-ajax-popup-align-top" href="/projects/{{ $p->id }}">
-                            <span class="overlay">
+                                                <span class="overlay">
 
-                                <span class="pf_text">
-                                    <span class="project-name">{{ $p->name }}</span>
-                                </span>
-                            </span>
+                                                    <span class="pf_text">
+                                                        <span class="project-name">{{ $p->name }}</span>
+                                                    </span>
+                                                </span>
                                             </a>
-                                            <img src="/images/portfolio/pf%20(1).jpg" alt=""
+                                            <img src="{{ $p->photos->first()->thumbnailPath }}" alt=""
                                             >
                                         </div>
                                     </div>

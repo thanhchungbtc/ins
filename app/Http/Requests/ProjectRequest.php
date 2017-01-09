@@ -26,7 +26,7 @@ class ProjectRequest extends FormRequest
         return [
             'name' => 'required',
             'category_id' => 'required|not_in:0',
-            'photo' => 'required'
+            'photo' => 'max:2048'
         ];
     }
 
@@ -34,7 +34,22 @@ class ProjectRequest extends FormRequest
     {
         return [
             'name.required' => 'The name is required',
-            'category_id.not_in' => 'You must select a category'
+            'category_id.not_in' => 'You must select a category',
+            'photo.max' => 'File size is too large, please choose file that less than 2MB'
         ];
     }
+
+    public function all()
+    {
+        $data = parent::all();
+
+        if (!empty($data['complete'])) {
+            $data['complete'] = date('Y-m-d H:i:s', strtotime($data['complete']));
+        } else {
+            $data['complete'] = NULL;
+        }
+        $data['price'] = empty($data['price']) ? 0 : $data['price'];
+        return $data;
+    }
+
 }

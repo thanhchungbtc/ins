@@ -9,15 +9,25 @@
             <li class="treeview">
                 <a href="/admin/categories">
                     <i class="fa fa-files-o"></i>
-                    <span>Category</span>
-                    <span class="pull-right-container">
-                    </span>
+                    <span>Project Categories</span>
                 </a>
             </li>
             <li>
                 <a href="/admin/projects">
                 <i class="fa fa-th"></i>
                 <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/products">
+                <i class="fa fa-th"></i>
+                <span>Products</span>
+                </a>
+            </li>
+            <li>
+                <a href="/admin/product-categories">
+                <i class="fa fa-th"></i>
+                <span>Product Categories</span>
                 </a>
             </li>
             <li class="treeview">

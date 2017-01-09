@@ -17,6 +17,7 @@ class CreateTableProjectPhotos extends Migration
             $table->increments('id');
             $table->integer('project_id');
             $table->string('path');
+            $table->string('thumbnailPath');
             $table->timestamps();
         });
     }

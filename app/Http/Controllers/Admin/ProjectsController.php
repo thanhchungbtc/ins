@@ -39,6 +39,7 @@ class ProjectsController extends Controller
      */
     public function store(ProjectRequest $request)
     {
+        $this->validate($request, ['photo' => 'required']);
         // save project
         $project = new Project($request->all());
         $project->save();
@@ -46,6 +47,7 @@ class ProjectsController extends Controller
         // upload photos
         $files = $request->file('photo');
         $project->addPhotos($files);
+
 
         // redirect
         return redirect()->route('projects.index');
@@ -71,6 +73,10 @@ class ProjectsController extends Controller
     public function edit($id)
     {
         $project = Project::with('photos')->where('id', $id)->firstOrFail();
+        if (isset($project->complete)) {
+            $project->complete = date('m/d/Y', strtotime($project->complete));
+        }
+
         return view('admins.projects.edit', compact('project'));
     }
 
@@ -81,7 +87,7 @@ class ProjectsController extends Controller
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProjectRequest $request, $id)
     {
         $project = Project::with('photos')->where('id', $id)->firstOrFail();
         $project->update($request->all());

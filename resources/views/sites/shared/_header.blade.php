@@ -27,7 +27,7 @@
                 <!-- logo begin -->
                 <div id="logo">
                     <a href="/">
-                        <img class="logo" src="/images/logo.png" alt="">
+                        <img class="logo" src="/images/ui/logo.png" alt="">
                     </a>
                 </div>
                 <!-- logo close -->
@@ -45,7 +45,7 @@
                         </li>
 
                         <li><a href="/about">Giới thiệu</a></li>
-                        <li><a href="shop.html">Shop nội thất</a></li>
+                        <li><a href="/shop">Shop nội thất</a></li>
                         <li><a href="/contact">Liên hệ</a></li>
                     </ul>
                 </nav>
